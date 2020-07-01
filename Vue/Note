@@ -1,0 +1,14 @@
+MVVM
+Vue对应DOM，Model对应JS里的数据。绑定数据
+
+传入Vue的options
+el: string| HTMLElements
+data: Object| Function(组件中必须是函数)
+methods: Function
+
+Vue的生命周期
+index.js Vue的入口
+
+create: function(){}
+mounted: function(){}
+都是在Vue里有完整生命周期的函数

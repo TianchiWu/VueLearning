@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="APP">
+    <button @click="btn1Click">按钮1</button>
+<!--    ()没有参数，abc显示undefined-->
+<!--    (123) abc=123 -->
+<!--    省略小括号，自动传入event到方法中-->
+    <button @click="btn2Click()">按钮2</button>
+
+<!--    传入event参数和对象参数-->
+    <button @click="btn3Click(abc,$event)">按钮3</button>
+    <button>按钮4</button>
+</div>
+<script src="../js/vue.js"></script>
+
+
+
+<script>
+  const app = new Vue({
+      el: '#APP',
+      data:{
+          abc: '123'
+      },
+      methods: {
+          btn1Click(){
+              console.log("btn1Click")
+          },
+          btn2Click(abc){
+              console.log('--------',abc)
+          },
+          btn3Click(abc,event){
+              console.log('++++++++',abc,event)
+          }
+      }
+  })
+</script>
+
+</body>
+</html>

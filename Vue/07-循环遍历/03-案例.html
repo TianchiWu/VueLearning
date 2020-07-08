@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .activate {
+            color: red
+        }
+    </style>
+</head>
+<body>
+
+<div id="APP">
+  <ul>
+      <li v-for=" (item,index) in movies"
+          :class="{activate:currentIndex === index }"
+      @click="liClick(index)">
+          {{item}}
+      </li>
+  </ul>
+</div>
+<script src="../js/vue.js"></script>
+
+<script>
+  const app = new Vue({
+      el: '#APP',
+      data:{
+          movies: [
+              '星际穿越',
+              '宝莲灯',
+              '盗梦空间'
+          ],
+          currentIndex: 0,//记录哪个变成红色
+
+
+      },
+      methods: {
+          liClick(index){
+              this.currentIndex=index
+          }
+      }
+  })
+</script>
+
+</body>
+</html>

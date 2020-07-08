@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--事件冒泡 先执行btnClick，再执行divClick-->
+<!--加修饰符.stop阻止冒泡-->
+<div id="APP" @click="divClick">
+    <button @click.stop="btnClick">按钮</button>
+    <br>
+    <form action="BaiDu">
+<!--        有打印同时有提交-->
+<!--        不希望提交，加修饰符.prevent组织提交-->
+        <input type="submit" value="提交" @click.prevent.stop="handleSubmit">
+    </form>
+
+<!--    只监听回车-->
+    <input type="text" @keyup.enter="keyUp">
+</div>
+<!-- .once只触发一次-->
+<script src="../js/vue.js"></script>
+
+<script>
+  const app = new Vue({
+      el: '#APP',
+      data:{
+        message: '模板'
+      },
+      methods: {
+          btnClick(){
+              console.log('btnClick')
+          },
+          divClick(){
+              console.log('divClick')
+          },
+          handleSubmit(){
+              console.log('handleSubmit')
+          },
+          keyUp(){
+              console.log('keyUp')
+          }
+      }
+
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="APP">
+    <h2 v-if="score>=60">合格</h2>
+    <h2 v-else>不合格</h2>
+</div>
+<script src="../js/vue.js"></script>
+
+<script>
+  const app = new Vue({
+      el: '#APP',
+      data:{
+        score: 99
+      }
+  })
+</script>
+
+</body>
+</html>

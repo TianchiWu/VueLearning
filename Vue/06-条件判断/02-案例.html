@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="APP">
+    <span>
+        <label for="username">用户账号</label>
+        <input type="text" id="username" placeholder="用户账号">
+    </span>
+    <br>
+    <span>
+        <label for="email">用户邮箱</label>
+        <input type="text" id="email" placeholder="用户邮箱">
+    </span>
+</div>
+<script src="../js/vue.js"></script>
+
+<script>
+  const app = new Vue({
+      el: '#APP',
+      data:{
+        message: '模板'
+      }
+  })
+</script>
+
+</body>
+</html>

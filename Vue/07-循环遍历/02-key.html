@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="APP">
+    <ul>
+<!--    key高效运行虚拟DOM    -->
+        <li v-for="item in letters" :key="item">
+            {{item}}
+        </li>
+    </ul>
+</div>
+<script src="../js/vue.js"></script>
+
+<script>
+  const app = new Vue({
+      el: '#APP',
+      data:{
+          letters: [
+              'A','B','C','D','E'
+          ]
+      }
+  })
+</script>
+
+</body>
+</html>

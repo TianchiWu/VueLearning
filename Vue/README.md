@@ -14,9 +14,9 @@ index.js Vue的入口
 都是在Vue里有完整生命周期的函数
 
 ## 插值操作
-v-text 纯文本
-v-pre 不解析
-v-cloak 解析之前，遮挡文本
+##### v-text 纯文本
+##### v-pre 不解析
+##### v-cloak 解析之前，遮挡文本
 
 ##### v-bind 动态绑定属性
 
@@ -28,4 +28,10 @@ v-cloak 解析之前，遮挡文本
 ##JS高阶函数
 ##### filter,map,reduce
 ##### columns = [10,20,30,40,120]
-##### columns.filter()
+##### colunms.filter(function (n){ return boolean }) 
+##### colunms.map(function(n){ return n*2 })
+##### colunms.reduce(function(preValue,n){ return preValue+n },0-initialValue) 数组和
+##### colunms.filter(n => n<100).map(n => n*2).reduce((pre,n) => pre + n)
+
+## 组件化
+##### 创建组件构造器、注册组件、使用组件

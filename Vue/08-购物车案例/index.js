@@ -53,12 +53,14 @@ const app = new Vue({
     },
     computed: {
         totalPrice(){
-            let totalPrice=0;
+            //let totalPrice=0;
             // for(let item of this.shoppingList){
             //     totalPrice+=item.counter*item.price
             // }
 
-            return totalPrice
+            return this.shoppingList.reduce(function(previousValue,book){
+                return previousValue + book.price * book.counter
+            },0)
         }
-    }
+    },
 })

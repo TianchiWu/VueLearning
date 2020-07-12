@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="APP">
+<!--    lazy回车改变值-->
+    <input type="text" v-model.lazy="message">
+    <h2>{{message}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+
+<script>
+  const app = new Vue({
+      el: '#APP',
+      data:{
+        message: '模板'
+      }
+  })
+</script>
+
+</body>
+</html>

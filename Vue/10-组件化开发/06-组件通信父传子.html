@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="APP">
+<!--    必须用v-bind,不然找不到这个变量，直接当成字符串-->
+<!--    不支持驼峰可以用c-movies代替-->
+    <cpn :cmovies="movies" :cmessage="message">
+    </cpn>
+</div>
+
+<template id="cpn">
+    <div>
+        {{cmovies}}
+        <p>{{cmessage}}</p>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+    const cpn= {
+        template: '#cpn',
+        props: {
+            //[cmovies]
+            //不能使用驼峰标识cMovies
+            cmovies: Array,
+            cmessage: {
+                type: String,
+                default: 'abcd',
+                required: true,
+            },
+        },
+        data(){
+            return{
+                title: '标题',
+            }
+        }
+    }
+
+    const app = new Vue({
+        el: '#APP',
+        data: {
+            movies: ['M1','M2','M3'],
+            //message: '模板'
+        },
+        components: {
+            //'cpn': cpn
+            cpn,
+        }
+    })
+</script>
+
+</body>
+</html>

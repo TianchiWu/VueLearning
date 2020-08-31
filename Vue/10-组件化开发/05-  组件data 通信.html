@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="APP">
+<!--    赋值-->
+    <cpn :cmovies="movies" :cmessage="message"></cpn>
+</div>
+<script src="../js/vue.js"></script>
+
+<template id="cpn">
+    <!--        父传子-->
+    <!--    props-->
+    <div>
+        <h1>{{title}}</h1>
+        {{cmovies}}
+        <p>{{cmessage}}</p>
+    </div>
+</template>
+<script>
+    Vue.component('cpn',{
+        template: '#cpn',
+        //props: ['cmovies'],
+        props: {
+            //类型限制
+            cmovies: Array,
+
+            //对象
+            //类型是对象或者数组时，默认数值必须是一个函数
+            // cmovies: {
+            //     type: Array,
+            //     default(){
+            //         return []
+            //     }
+            // }
+            cmessage: {
+              type: String,
+                default: 'aaaaa',
+                required: true,//必须传这个值，否则报错
+
+            }
+        },
+        //data 必须是函数
+        data(){
+            return {
+                title: 'abc '
+            }
+        },
+
+    })
+//vue是root组件，父组件
+//cpn是子组件
+  const app = new Vue({
+      el: '#APP',
+      data:{
+        message: '模板',
+          movies: ['m1','m2','m3']
+      }
+  })
+</script>
+
+</body>
+</html>

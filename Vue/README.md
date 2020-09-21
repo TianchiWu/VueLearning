@@ -35,3 +35,7 @@ index.js Vue的入口
 
 ## 组件化
 ##### 创建组件构造器、注册组件、使用组件
+
+##自定义组件格式
+##### .vue文件包含<template>(组件里的template) <script>(js代码) <style>(样式)
+

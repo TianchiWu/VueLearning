@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="APP">
+    <cpn ref="aaa"></cpn>
+    <button @click="btnClick">button</button>
+</div>
+
+<template id="cpn">
+    <div>
+        子组件
+
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+
+<script>
+    const app = new Vue({
+        el: '#APP',
+        data: {
+            message: '模板'
+        },
+        methods: {
+            btnClick(){
+                //console.log(this.$children)
+                //一般不用
+                //this.$children[0].showMessage()
+
+                //$refs更常用 => 对象类型，默认为空
+                console.log(this.$refs.aaa.name)
+            }
+        },
+        components: {
+            cpn: {
+                template: '#cpn',
+                methods: {
+                    showMessage(){
+                        console.log('showMessage')
+                    }
+                },
+                data() {
+                    return {
+                        name: 'Jack'
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

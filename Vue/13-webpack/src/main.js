@@ -7,4 +7,13 @@ console.log(sub(20,30))
 require('./css/normal.css')
 require('./css/special.less')
 
-document.writeln('<h2>标题</h2>')
+// document.writeln('<h2>标题</h2>')
+
+import Vue from 'vue'
+
+const app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello World!'
+    }
+})

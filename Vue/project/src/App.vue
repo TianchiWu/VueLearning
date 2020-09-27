@@ -1,12 +1,48 @@
 <template>
   <div id="app">
     <div id="nav">
+<!--      默认是a标签-->
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+<!--      <button @click="homeClick">Home</button>-->
+<!--      <button @click="aboutClick">About</button>-->
+        <button @click="userClick">User</button>
+        <button @click="profileClick">Profile</button>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+    name: 'App',
+    data() {
+        return {
+            userId: 'ZhangSan'
+        }
+    },
+    methods: {
+        homeClick() {
+            this.$router.push('/')
+        },
+        aboutClick() {
+            this.$router.push('/about')
+        },
+        userClick() {
+            this.$router.push('/user/'+this.userId)
+        },
+        profileClick() {
+            this.$router.push({
+                path: '/profile',
+                query: {
+                    name: 'fjy',
+                    age: 21
+                }
+            })
+        }
+    }
+}
+</script>
 
 <style>
 #app {
